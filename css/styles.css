@@ -1,220 +1,232 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Poppins: 200, 300, 400, 500, 600, 700, 800, 900&display=swap');*/
-* {
+*{
+  font-family: 'Bebas Neue', cursive;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
-body {
-  background: darkorange;
+body{
+  min-height: 100vh;
+  background:orangered;
 }
-header {
-  background-color: #000;
-  position: absolute;
-  top: 0;
-  left: 0;
+/*------------Header-----------*/
+header{
   width: 100%;
+  min-height: 80px;
+  overflow: hidden;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 30px 100px;
-  z-index: 100;
+  background: #111;
+  position: relative;
 }
 .logo{
-    font-size: 2em;
-    color: white;
-    margin-left: 100px;
+  font-size: 3em;
+  color: white;
+  margin-left: 100px;
 }
 .logo h2{
+  letter-spacing: 2px;
+}
+
+ul {
+  flex: 2px;
+  text-align: right;
+  margin-right: 50px;
+}
+ul li {
+  list-style: none;
+  display: inline-block;
+}
+ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 1.5rem;
+}
+ul li:hover a {
+  color: orangered;
+}
+
+/*------------section---Start--------*/
+section{
+    position: relative;
+}
+.container{
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    /* position: relative; */
+}
+.slides{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    animation: fade 1s ease-in-out;
+}
+
+@keyframes fade{
+    to{
+        opacity:1;
+    }
+    from{
+        opacity:0;
+    }
+}
+.best_movie_poster{
+    width: 100%;
+    margin-top: 5%;
+}
+.slides img{
+    width: 50%;
+    height: 50%;
+    display: block;
+    object-fit: cover;
+    filter: brightness(100%);
+}
+.slides .content{
+    position: absolute;
+    left: 50px;
+    bottom: 100px;
+    color: white;
+    max-width: 400px;
+    text-shadow: 0 0 1px #000;
+    margin-left: 30px;
+
+}
+.content h2{
+    font-size: 2em;
     letter-spacing: 2px;
 }
-.navigation {
-  display: flex;
-}
-.navigation li {
-  list-style: none;
-  margin: 0 10px;
-}
-.navigation li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  letter-spacing: 1px;
-}
-.navigation li:hover a {
-  color: #de0611;
-}
-.search {
-  position: relative;
-  width: 300px;
-  height: 40px;
-}
-.search input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  color: #fff;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 2555, 0.5);
-  outline: none;
-  border-radius: 4px;
-  padding: 0 10px 0 45px;
-  backdrop-filter: blur(10px);
-}
-.search input::placeholder {
-  color: #fff;
-}
-.search .fa-search {
-  position: absolute;
-  top: 25%;
-  left: 25px;
-  transform: translate(-50%);
-  padding-right: 10px;
-  color: #fff;
-  border-right: 1px solid #fff;
-}
-.banner {
-  background-color:darkorange;
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  padding: 0 100px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.banner .bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.content {
-  position: relative;
-  z-index: 1;
-  max-width: 550px;
-}
-.movieTitle {
-  max-width: 10px;
-}
-.banner .content h4 {
-  color: rgba(255, 255, 2555, 0.5);
-  font-weight: 500;
-}
-.banner .content h4 span {
-  padding: 0 10px;
-  border-right: 1px solid rgba(255, 255, 2555, 0.5);
-}
-.banner .content h4 span:first-child {
-  padding-left: 0;
-}
-.banner .content h4 span:last-child {
-  border-right: none;
-}
-.banner .content h4 span i {
-  background: #de0611;
-  color: #fff;
-  padding: 0 8px;
-  display: inline-block;
-  font-style: normal;
-  border-radius: 2px;
-}
-.banner .content p {
-  font-size: 1em;
-  font-weight: 300;
-  line-height: 1.5em;
-  color: #fff;
-  margin: 10px 0 20px;
-}
-.banner .content .buttons {
-  position: relative;
-}
-.banner .content .buttons a {
-  position: relative;
-  display: inline-block;
-  margin-right: 10px;
-  background: #de0611;
-  color: #fff;
-  padding: 6px 20px;
-  text-decoration: none;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-.banner .content .buttons a:nth-child(2) {
-  background: rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 2555, 0.1);
-}
-.banner .content .buttons a:hover:nth-child(2) {
-  background: #de0611;
-}
-.play {
-  position: absolute;
-  bottom: 5px;
-  left: 100px;
-  display: inline-flex;
-  justify-content: flex-start;
-  align-items: center;
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: 500;
-  text-decoration: none;
-  letter-spacing: 1px;
-  font-size: 1.2em;
-  cursor: pointer;
-}
-.play img {
-  margin-right: 10px;
-  max-width: 50px;
-}
-
-
-@media (max-width: 991px) {
-  .hearder {
-    padding: 20 px 50px;
-    flex-direction: column;
-  }
-  .navigation {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.content p{
+    line-height: 1.4;
     margin: 10px 0;
-  }
-  .banner {
-    padding: 100px 50px;
-  }
-  .banner .play {
-    left: 50px;
-    font-size: 1em;
-  }
-  .play img {
-    margin-right: 10px;
-    max-width: 40px;
-  }
-  .trailer .video {
-    max-width: 90%;
-  }
+}
+.content a{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background: #0009;
+    padding: 10px, 15px;
+}
+.content a:hover{
+    background:darkred;
+}
+/*------------Movies cat --in--section-----------*/
+.row{
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 30px;
+}
+.row h2{
+    color:white;
+    letter-spacing: 2px;
+}
+.nav{
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+}
+.nav .nav-bar{
+    width: 100%;
+    height: 200px;
+    display: flex;
+}
+.nav-bar .column{
+    min-width: 25%;
+    height: 100%;
+    transition: 0.3s linear;
+    cursor: pointer;
+}
+.column img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
 }
 
-@media (max-width: 600px) {
-  .hearder {
-    padding: 20 px 50px;
+.prev .next{
+    position: absolute;
+    top: 40%;
+    font-size: 3.5em;
+    background: #000;
+    color: #fff;
+    padding: 5 px 10 px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.next{
+    right: 0;
+}
+/*------------section --End-----------*/
+/*------------responsive web site-----------*/
+@media (max-width: 1100px){
+    .logo{
+        margin: 50px;
+    }
+    .search{
+        margin-right: 10px;
+    }
+    .ul{
+        margin-right: 10px;
+    }
+}
+@media (max-width: 960px){
+    .ul{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        background: #111;
+        width: 100px;
+        height: 100vh;
+        z-index: 99;
+        padding-top: 80px;
+        text-align: center;
+        overflow: auto;
+        transition: 0.5s linear;
+    }
+    .ul li{
+        display: block;
+        padding: 20px 50px;
+    }
+    .menu-close,
+    .menu-open{
+        display: block;
+        cursor: pointer;
+    }
+}
+#chk1:checked ~.ul{
+    left: 0;
+}
+#chk1{
+    display: none;
+}
+@media (max-width: 760px){
+  .row .nav{
+      height: auto;
+      flex-wrap: wrap;
+      transition: 0.5s linear;
   }
-  .search {
-    position: relative;
-    width: calc(100% - 20px);
-    height: 40px;
+  .column{
+      width: 25%;
   }
-  .banner {
-    padding: 220px 20px 120px;
+  .prev, .next{
+      display: none;
   }
-  .banner .play {
-    left: 20px;
-    font-size: 1em;
-    bottom: 30px;
+}
+@media (max-width: 550px){
+  .search{
+      position: fixed;
+      top: 20px;
+      z-index: 99;
+      left: -100%;
+      transform: translateY(-50%);
+      transition: 0.5s linear;
   }
+}
+#chk1:checked ~ .search{
+  left: 50%;
 }

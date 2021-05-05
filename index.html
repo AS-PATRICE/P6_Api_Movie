@@ -1,52 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <title>JustStreamIt</title>
 </head>
+
 <body>
     <header>
-        <div class="logo"> <h2>JustStreamIt</h2>
+        <div class="logo">
+            <h2>JustStreamIt</h2>
         </div>
-        <ul class="navigation">
+        <ul>
             <li><a href="#">Top rated movies</a></li>
             <li><a href="#">Sci-F</a></li>
             <li><a href="#">Comedy</a></li>
             <li><a href="#">Action</a></li>
         </ul>
-        <div class="search">
-            <input type="text" placeholder="search" id="inputValue">
-            <i class="fa fa-search" aria-hidden="true" id="search"></i>
-        </div>
     </header>
-    <div class="banner">
-        <div id="best-Movie-Container" >
-            <section class="section">
-                <img src=" " alt="movieTitle">
-                <h4>
-                    <span>2021</span>
-                    <span><i>12+</i></span>
-                    <span>1h 55min</span>
-                    <span>Action</span>
-                </h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque magni qui idem laudantium quod in facere,
-                    aliquam, dolor labore dolor
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque magni qui idem laudantium quod in facere,
-                    aliquam, dolor labore dolor.</p>
-                <div class="buttons">
-                    <a href=" "><i class="fa fa-play" aria-hidden="true"></i>Play</a>
+    <section>
+        <div class="container">
+            <div class="slides">
+                <div class="best_movie_poster">
+                    <img src=" " alt=" ">
                 </div>
-            </section>
+                <div class="content">
+                    <h2>
+                        <span class="best_movie_title"></span>
+                    </h2>
+                    <div class="buttons">
+                        <a href=" "><i class="fa fa-play" aria-hidden="true"></i>Play</a>
+                    </div>
+                    <p class="best_movie_description"></p>
+                </div>
+            </div>
         </div>
-        <a class="play"><img src=" ">Watch Trailer</a>
-    </div>
-       
-    
-    
+    </section>
+    <!--Movies category Top Rated Movies-->
+    <section class="section_imbd">
+        <div class="row">
+            <h2>Top Rated Movies</h2>
+            <div class="nav">
+                <div class="nav-bar">
+                    <div id="rad_movie_poster1" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="rad_movie_poster2" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="rad_movie_poster3" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="rad_movie_poster4" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="rad_movie_poster5" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="rad_movie_poster6" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="rad_movie_poster7" class="column">
+                        <img src=" " alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="prev"> Prev </div>
+            <div class="next">Next</div>
+        </div>
+    </section>
+    <!--Movies category Sce-Fi-->
+    <section class="section_sci_fict">
+        <div class="row">
+            <h2>Science Fiction</h2>
+            <div class="nav">
+                <div class="nav-bar">
+                    <div id="sce_fict_movie_poster1" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="sce_fict_movie_poster2" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="sce_fict_movie_poster3" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="sce_fict_movie_poster4" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="sce_fict_movie_poster5" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="sce_fict_movie_poster6" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="sce_fict_movie_poster7" class="column">
+                        <img src=" " alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="prev"> Prev </div>
+            <div class="next">Next</div>
+        </div>
+    </section>
+    <!--Movies category Comedy-->
+    <section class="section_sci_fict">
+        <div class="row">
+            <h2>Comedy</h2>
+            <div class="nav">
+                <div class="nav-bar">
+                    <div id="comedy_movie_poster1" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="comedy_movie_poster2" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="comedy_movie_poster3" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="comedy_movie_poster4" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="comedy_movie_poster5" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="comedy_movie_poster6" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="comedy_movie_poster7" class="column">
+                        <img src=" " alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="prev"> Prev </div>
+            <div class="next">Next</div>
+        </div>
+    </section>
+    <!--Movies category Action-->
+    <section class="section_sci_fict">
+        <div class="row">
+            <h2>Action</h2>
+            <div class="nav">
+                <div class="nav-bar">
+                    <div id="action_movie_poster1" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="action_movie_poster2" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="action_movie_poster3" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="action_movie_poster4" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="action_movie_poster5" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="action_movie_poster6" class="column">
+                        <img src=" " alt="">
+                    </div>
+                    <div id="action_movie_poster7" class="column">
+                        <img src=" " alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="prev"> Prev </div>
+            <div class="next">Next</div>
+        </div>
+    </section>
 
-    <script src="js/javascript.js"></script>
+    <section>
+        <footer class="footer"></footer>
+    </section>
+    <!--Javascript-->
+    <script src="./js/javascript.js"></script>
+
 </body>
+
 </html>
