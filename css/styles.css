@@ -48,42 +48,25 @@ ul li:hover a {
 }
 
 /*------------section---Start--------*/
-section{
-    position: relative;
-}
 .container{
     width: 100%;
-    height: 450px;
+    height: 350px;
     overflow: hidden;
-    /* position: relative; */
-}
-.slides{
-    width: 100%;
-    height: 100%;
     position: relative;
-    animation: fade 1s ease-in-out;
+    /* background:rgb(216, 22, 119); */
 }
 
-@keyframes fade{
-    to{
-        opacity:1;
-    }
-    from{
-        opacity:0;
-    }
-}
 .best_movie_poster{
     width: 100%;
+    height: 100%;
     margin-top: 5%;
+    position:relative;
+    left: 50%;
+    right: 50%;
+    cursor: pointer;
 }
-.slides img{
-    width: 50%;
-    height: 50%;
-    display: block;
-    object-fit: cover;
-    filter: brightness(100%);
-}
-.slides .content{
+
+.content{
     position: absolute;
     left: 50px;
     bottom: 100px;
@@ -91,6 +74,7 @@ section{
     max-width: 400px;
     text-shadow: 0 0 1px #000;
     margin-left: 30px;
+    
 
 }
 .content h2{
@@ -113,7 +97,7 @@ section{
 }
 /*------------Movies cat --in--section-----------*/
 .row{
-    width: 90%;
+    width: 50%;
     height: auto;
     margin: 0 auto;
     position: relative;
@@ -127,25 +111,38 @@ section{
     width: 100%;
     height: 220px;
     overflow: hidden;
-    padding: 10px 0;
+    padding: none;
     scroll-behavior: smooth;
 }
 .nav .nav-bar{
     width: 100%;
-    height: 200px;
+    height: 100%;
     display: flex;
+    overflow-y:scroll;
 }
 .nav-bar .column{
-    min-width: 25%;
+    min-width: 19%;
     height: 100%;
     transition: 0.3s linear;
-    cursor: pointer;
+    
+    
 }
 .column img{
-    width: 100%;
+    width: 150px;
     height: 100%;
     display: block;
     object-fit: cover;
+    cursor: pointer;
+    
+}
+
+.column img:hover{
+  width: 150px;
+  height: 100%;
+  transform: scale(1.2);
+  cursor: pointer;
+  cursor: pointer;
+  
 }
 
 .prev .next{
@@ -161,6 +158,77 @@ section{
 .next{
     right: 0;
 }
+
+/*------------Modal--section-----------*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .modal_content {
+    margin: 10% auto;
+    padding: 20px;
+    width: 60%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+    animation-name: modalopen;
+    animation-duration: var(--modal-duration);
+  }
+  
+  .modal_header h2,
+  .modal-footer h3 {
+    margin: 0;
+  }
+  
+  .modal_header {
+    background: var(--modal-color);
+    padding: 15px;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .modal_body {
+    padding: 10px 20px;
+    background: #fff;
+  }
+  
+  .modal_footer {
+    background: var(--modal-color);
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  .close {
+    color: #ccc;
+    float: right;
+    font-size: 30px;
+    color: #fff;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  @keyframes modalopen {
+    from {
+      opacity: 3;
+    }
+    to {
+      opacity: 6;
+    }
+  }
 /*------------section --End-----------*/
 /*------------responsive web site-----------*/
 @media (max-width: 1100px){

@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>JustStreamIt</title>
 </head>
 
@@ -17,162 +18,132 @@
             <h2>JustStreamIt</h2>
         </div>
         <ul>
-            <li><a href="#">Top rated movies</a></li>
-            <li><a href="#">Sci-F</a></li>
-            <li><a href="#">Comedy</a></li>
-            <li><a href="#">Action</a></li>
+            <li><a href="#top_rate_movies_link">Top rated movies</a></li>
+            <li><a href="#sce_fict_link">Sci-F</a></li>
+            <li><a href="#comedy_link">Comedy</a></li>
+            <li><a href="#action_link">Action</a></li>
         </ul>
     </header>
     <section>
         <div class="container">
-            <div class="slides">
-                <div class="best_movie_poster">
-                    <img src=" " alt=" ">
+            <div class="best_movie_poster">
+            </div>
+            <div class="content">
+                <h2>
+                    <span class="best_movie_title"></span>
+                </h2>
+                <div class="buttons">
+                    <a href=" "><i class="fa fa-play" aria-hidden="true"></i>Play</a>
                 </div>
-                <div class="content">
-                    <h2>
-                        <span class="best_movie_title"></span>
-                    </h2>
-                    <div class="buttons">
-                        <a href=" "><i class="fa fa-play" aria-hidden="true"></i>Play</a>
-                    </div>
-                    <p class="best_movie_description"></p>
-                </div>
+                <p class="best_movie_description"></p>
             </div>
         </div>
     </section>
     <!--Movies category Top Rated Movies-->
     <section class="section_imbd">
         <div class="row">
-            <h2>Top Rated Movies</h2>
+            <h2 id="top_rate_movies_link">Top Rated Movies</h2>
             <div class="nav">
                 <div class="nav-bar">
-                    <div id="rad_movie_poster1" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="rad_movie_poster2" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="rad_movie_poster3" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="rad_movie_poster4" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="rad_movie_poster5" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="rad_movie_poster6" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="rad_movie_poster7" class="column">
-                        <img src=" " alt="">
-                    </div>
+                    <div id="rad_movie_poster1" class="column"> </div>
+                    <div id="rad_movie_poster2" class="column"> </div>
+                    <div id="rad_movie_poster3" class="column"> </div>
+                    <div id="rad_movie_poster4" class="column"> </div>
+                    <div id="rad_movie_poster5" class="column"> </div>
+                    <div id="rad_movie_poster6" class="column"></div>
+                    <div id="rad_movie_poster7" class="column"></div>
                 </div>
+                <div class="prev"> Prev </div>
+                <div class="next">Next</div>
             </div>
-            <div class="prev"> Prev </div>
-            <div class="next">Next</div>
+
         </div>
     </section>
     <!--Movies category Sce-Fi-->
     <section class="section_sci_fict">
         <div class="row">
-            <h2>Science Fiction</h2>
+            <h2 id="sce_fict_link">Science Fiction</h2>
             <div class="nav">
                 <div class="nav-bar">
-                    <div id="sce_fict_movie_poster1" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="sce_fict_movie_poster2" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="sce_fict_movie_poster3" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="sce_fict_movie_poster4" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="sce_fict_movie_poster5" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="sce_fict_movie_poster6" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="sce_fict_movie_poster7" class="column">
-                        <img src=" " alt="">
-                    </div>
+                    <div id="sce_fict_movie_poster1" class="column"> </div>
+                    <div id="sce_fict_movie_poster2" class="column"> </div>
+                    <div id="sce_fict_movie_poster3" class="column"> </div>
+                    <div id="sce_fict_movie_poster4" class="column"> </div>
+                    <div id="sce_fict_movie_poster5" class="column"> </div>
+                    <div id="sce_fict_movie_poster6" class="column"> </div>
+                    <div id="sce_fict_movie_poster7" class="column"> </div>
                 </div>
+                <div class="prev"> Prev </div>
+                <div class="next">Next</div>
             </div>
-            <div class="prev"> Prev </div>
-            <div class="next">Next</div>
         </div>
     </section>
     <!--Movies category Comedy-->
-    <section class="section_sci_fict">
+    <section class="section_comedy">
         <div class="row">
-            <h2>Comedy</h2>
+            <h2 id="comedy_link">Comedy</h2>
             <div class="nav">
                 <div class="nav-bar">
-                    <div id="comedy_movie_poster1" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="comedy_movie_poster2" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="comedy_movie_poster3" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="comedy_movie_poster4" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="comedy_movie_poster5" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="comedy_movie_poster6" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="comedy_movie_poster7" class="column">
-                        <img src=" " alt="">
-                    </div>
+                    <div id="comedy_movie_poster1" class="column"> </div>
+                    <div id="comedy_movie_poster2" class="column"> </div>
+                    <div id="comedy_movie_poster3" class="column"> </div>
+                    <div id="comedy_movie_poster4" class="column"> </div>
+                    <div id="comedy_movie_poster5" class="column"> </div>
+                    <div id="comedy_movie_poster6" class="column"> </div>
+                    <div id="comedy_movie_poster7" class="column"> </div>
                 </div>
+                <div class="prev"> Prev </div>
+                <div class="next">Next</div>
             </div>
-            <div class="prev"> Prev </div>
-            <div class="next">Next</div>
         </div>
     </section>
     <!--Movies category Action-->
-    <section class="section_sci_fict">
+    <section class="section_action">
         <div class="row">
-            <h2>Action</h2>
+            <h2 id="action_link">Action</h2>
             <div class="nav">
                 <div class="nav-bar">
-                    <div id="action_movie_poster1" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="action_movie_poster2" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="action_movie_poster3" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="action_movie_poster4" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="action_movie_poster5" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="action_movie_poster6" class="column">
-                        <img src=" " alt="">
-                    </div>
-                    <div id="action_movie_poster7" class="column">
-                        <img src=" " alt="">
-                    </div>
+                    <div id="action_movie_poster1" class="column"> </div>
+                    <div id="action_movie_poster2" class="column"> </div>
+                    <div id="action_movie_poster3" class="column"> </div>
+                    <div id="action_movie_poster4" class="column"> </div>
+                    <div id="action_movie_poster5" class="column"> </div>
+                    <div id="action_movie_poster6" class="column"> </div>
+                    <div id="action_movie_poster7" class="column"> </div>
                 </div>
+                <div class="prev"> Prev </div>
+                <div class="next">Next</div>
             </div>
-            <div class="prev"> Prev </div>
-            <div class="next">Next</div>
         </div>
     </section>
+    <!--Modal section-->
+    <div id="my_modal" class="modal">
+        <div class="modal_content">
+          <div class="modal_header">
+            <span class="close">&times;</span>
+            <h2>Movie Presentation</h2>
+          </div>
+            <div class="modal_body">
+                <div id="movie_poster"> </div>
+                    <div id="movie_info">
+                        <p class="info">Title : <span id="movie_title"> </span></p>
+                        <p class="info">Genre  : <span id="movie_genres"> </span></p>
+                        <p class="info">Year : <span id="movie_year"> </span></p>
+                        <p class="info">Rated : <span id="movie_rated"> </span></p>
+                        <p class="info">Imdb score : <span id="movie_imdb_score"> </span></p>
+                        <p class="info">Directors : <span id="movie_directors"> </span></p>
+                        <p class="info">Actors : <span id="movie_actors"> </span></p>
+                        <p class="info">Duration : <span id="movie_duration"> </span></p>
+                        <p class="info">Countries : <span id="movie_countries"> </span></p>
+                        <p class="info">Box Office : <span id="movie_votes"> </span></p>
+                        <p class="info">Description : <span id="movie_long_description"> </span></p>
+                    </div>
+                </div>      
+            <div class="modal_footer">
+                <h3>     </h3>
+            </div>
+        </div>
+      </div>
 
     <section>
         <footer class="footer"></footer>
