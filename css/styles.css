@@ -6,7 +6,7 @@
 }
 body{
   min-height: 100vh;
-  background:orangered;
+  background:rgb(214, 209, 208);
 }
 /*------------Header-----------*/
 header{
@@ -44,7 +44,7 @@ ul li a {
   font-size: 1.5rem;
 }
 ul li:hover a {
-  color: orangered;
+  background-color: brown;
 }
 
 /*------------section---Start--------*/
@@ -53,17 +53,30 @@ ul li:hover a {
     height: 350px;
     overflow: hidden;
     position: relative;
-    /* background:rgb(216, 22, 119); */
+    background-color: brown;
+    text-align:left;
 }
 
 .best_movie_poster{
-    width: 100%;
-    height: 100%;
-    margin-top: 5%;
-    position:relative;
-    left: 50%;
+    margin-top: 2%;
+    position:absolute;
+    left: 54%;
     right: 50%;
-    cursor: pointer;
+}
+
+.best_movie_poster img{
+  width: 450px;
+  height: 350px;
+  /* display: block; */
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.best_movie_poster img:hover{
+  width: 450px;
+  height: 350px;
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 .content{
@@ -93,40 +106,43 @@ ul li:hover a {
     padding: 10px, 15px;
 }
 .content a:hover{
-    background:darkred;
+  background-color: brown;
 }
 /*------------Movies cat --in--section-----------*/
-.row{
-    width: 50%;
+.section{
+    width: 55%;
     height: auto;
     margin: 0 auto;
     position: relative;
-    margin-top: 30px;
+    margin-top: 5px;
+    /* overflow:scroll; */
 }
-.row h2{
-    color:white;
+.section h2{
+    color: brown;
     letter-spacing: 2px;
 }
 .nav{
     width: 100%;
-    height: 220px;
+    height: 250px;
     overflow: hidden;
     padding: none;
-    scroll-behavior: smooth;
+    overflow:scroll;
+    
 }
 .nav .nav-bar{
     width: 100%;
     height: 100%;
     display: flex;
-    overflow-y:scroll;
+    background-color: brown;
 }
-.nav-bar .column{
+
+.nav .column{
     min-width: 19%;
     height: 100%;
     transition: 0.3s linear;
     
-    
 }
+
 .column img{
     width: 150px;
     height: 100%;
@@ -141,22 +157,24 @@ ul li:hover a {
   height: 100%;
   transform: scale(1.2);
   cursor: pointer;
-  cursor: pointer;
   
 }
-
-.prev .next{
-    position: absolute;
-    top: 40%;
-    font-size: 3.5em;
-    background: #000;
-    color: #fff;
-    padding: 5 px 10 px;
-    transform: translateY(-50%);
-    cursor: pointer;
+#leftarrow, #rightarrow{
+  position: absolute;
+  top: 40%;
+  font-size: 6.5em;
+  padding: 0 px 0 px;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
-.next{
-    right: 0;
+
+#leftarrow button, #rightarrow button{
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+}
+#rightarrow{
+  right: 0;
 }
 
 /*------------Modal--section-----------*/
@@ -235,9 +253,6 @@ ul li:hover a {
     .logo{
         margin: 50px;
     }
-    .search{
-        margin-right: 10px;
-    }
     .ul{
         margin-right: 10px;
     }
@@ -260,15 +275,9 @@ ul li:hover a {
         display: block;
         padding: 20px 50px;
     }
-    .menu-close,
-    .menu-open{
-        display: block;
-        cursor: pointer;
-    }
+    
 }
-#chk1:checked ~.ul{
-    left: 0;
-}
+
 #chk1{
     display: none;
 }
@@ -282,19 +291,6 @@ ul li:hover a {
       width: 25%;
   }
   .prev, .next{
-      display: none;
+      display: flex;
   }
-}
-@media (max-width: 550px){
-  .search{
-      position: fixed;
-      top: 20px;
-      z-index: 99;
-      left: -100%;
-      transform: translateY(-50%);
-      transition: 0.5s linear;
-  }
-}
-#chk1:checked ~ .search{
-  left: 50%;
 }
