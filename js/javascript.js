@@ -28,6 +28,62 @@ function get_rad_movies_url_2(){
   }) 
 }
 
+
+// const urlPage1Top = 'http://localhost:8000/api/v1/titles/?sort_by=-imdb_score'
+// const urlPage2Top = 'http://localhost:8000/api/v1/titles/?page=2&sort_by=-imdb_score'
+
+// function getCategoryMoviesUrl(url1,url2){
+//   const success = res => res.ok ? res.json() : Promise.resolve({});
+
+//   const firstPage = fetch(url1)
+//   .then(success);
+
+//   const secondPage = fetch(url2)
+//   .then(success);
+
+//   return Promise.all([firstPage, secondPage])
+//   .then(([firstPageData, secondPageData]) => {
+  
+//   firstPageData.results.forEach(function (movie, i){
+//     console.log(movie.url)
+//   })
+
+//   secondPageData.results.forEach(function (movie, i){
+//     console.log(movie.url)
+     
+//   })
+     
+
+//   })
+//   .catch(err => console.error(err));
+// }
+// getCategoryMoviesUrl(urlPage1Top,urlPage2Top);
+// console.log(movie);
+
+// function get_best_movie(url, category, index){
+//   const bestMovie = getCategoryMoviesUrl(urlPage1Top,urlPage2Top);
+//   console.log(bestMovie.then(movie, index));
+
+// }
+// get_best_movie();
+
+// function get_best_movie_info(url){
+//     getFetch(url)
+   
+    
+//     .then((movie) => {
+//       console.log(bestMovie);
+//     document.querySelector('.best_movie_description').innerHTML = `${movie.description}`;
+//     document.querySelector('.best_movie_poster').innerHTML = `<img src=${movie.image_url}></img>`;
+//     document.querySelector('.best_movie_title').innerHTML = `${movie.title}`;
+//     document.querySelector('.best_movie_poster').addEventListener("click", function() {
+//       get_modal_movie_info(movie);
+//      });
+//     })
+// }
+// get_best_movie_info();
+
+
 function get_scfi_movies_url_1(){
   let data = getFetch('http://localhost:8000/api/v1/titles/?genre=Sci-Fi&sort_by=-imdb_score')
   data.then(value => {
@@ -45,8 +101,7 @@ function get_scfi_movies_url_2(){
   data.then(value => {
     get_scfi_movie5_info(value.results[0].url);
     get_scfi_movie6_info(value.results[1].url);
-    
-    
+     
   }) 
 }
 
@@ -61,6 +116,11 @@ function get_comedy_movies_url_1(){
     
   }) 
 }
+
+
+
+
+
 
 function get_comedy_movies_url_2(){
   let data = getFetch('http://localhost:8000/api/v1/titles/?genre=Comedy&page=2&sort_by=-imdb_score')
@@ -155,7 +215,7 @@ function get_rad_movie7_info(url){
   })   
 }
 
-//############################  get science fiction movies infos  ##################################### 
+// //############################  get science fiction movies infos  ##################################### 
 
 function get_scfi_movie0_info(url){
   getFetch(url)
@@ -221,7 +281,7 @@ function get_scfi_movie6_info(url){
   })   
 }
 
-//############################  get comedy movies infos  ##################################### 
+// //############################  get comedy movies infos  ##################################### 
 
 
 function get_comedy_movie0_info(url){

@@ -24,11 +24,8 @@
             <li><a href="#action_link">Action</a></li>
         </ul>
     </header>
-    <section>
-        <div class="container">
-            <div class="best_movie_poster">
-            </div>
-            <div class="content">
+    <div class="container">
+        <div class="content">
                 <h2>
                     <span class="best_movie_title"></span>
                 </h2>
@@ -36,9 +33,11 @@
                     <a href=" "><i class="fa fa-play" aria-hidden="true"></i>Play</a>
                 </div>
                 <p class="best_movie_description"></p>
+        </div>
+            <div class="best_movie_poster">
             </div>
         </div>
-    </section>
+   
     <!--Movies category Top Rated Movies-->
     <section class="section"> 
         <h2 id="top_rate_movies_link">Top Rated Movies</h2>  
@@ -72,10 +71,11 @@
     <!--Movies category Comedy-->
     <section class="section">
             <h2 id="comedy_link">Comedy</h2>    
-            <div class="nav">
-                <div id="leftarrow" onclick="moveLeft()">
+            <div id="leftarrow" onclick="moveLeft()">
                     <button>&lt;</button>
-                </div>
+            </div>
+            <div class="nav">
+                
                 <div class="nav-bar">
                     
                     <div id="comedy_movie_poster1" class="column"> </div>    

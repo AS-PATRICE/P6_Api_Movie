@@ -6,22 +6,24 @@
 }
 body{
   min-height: 100vh;
-  background:rgb(214, 209, 208);
+  background:black;
 }
 /*------------Header-----------*/
-header{
+header, footer{
   width: 100%;
-  min-height: 80px;
+  min-height: 90px;
   overflow: hidden;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: #111;
+  background: rgb(27, 4, 4);
   position: relative;
+  border-radius: 15px;
+  margin: 5px auto;
 }
 .logo{
-  font-size: 3em;
-  color: white;
+  font-size: 2.5em;
+  color: rgb(145, 4, 4);
   margin-left: 100px;
 }
 .logo h2{
@@ -44,17 +46,20 @@ ul li a {
   font-size: 1.5rem;
 }
 ul li:hover a {
-  background-color: brown;
+  background-color: rgb(145, 4, 4);
 }
 
 /*------------section---Start--------*/
 .container{
-    width: 100%;
-    height: 350px;
-    overflow: hidden;
+  display: grid;
+    width: 70%;
+    min-height: 450px;
+    margin: 5px auto;
     position: relative;
-    background-color: brown;
-    text-align:left;
+    background-color: black;
+    padding: 5px;
+    border-radius: 15px; 
+    box-shadow: -2px -2px 20px 4px rgb(27 4 4 / 91%);  
 }
 
 .best_movie_poster{
@@ -67,15 +72,8 @@ ul li:hover a {
 .best_movie_poster img{
   width: 450px;
   height: 350px;
-  /* display: block; */
+  display: block;
   object-fit: cover;
-  cursor: pointer;
-}
-
-.best_movie_poster img:hover{
-  width: 450px;
-  height: 350px;
-  transform: scale(1.2);
   cursor: pointer;
 }
 
@@ -86,7 +84,7 @@ ul li:hover a {
     color: white;
     max-width: 400px;
     text-shadow: 0 0 1px #000;
-    margin-left: 30px;
+   
     
 
 }
@@ -102,7 +100,7 @@ ul li:hover a {
     display: inline-block;
     text-decoration: none;
     color: white;
-    background: #0009;
+    background: black;
     padding: 10px, 15px;
 }
 .content a:hover{
@@ -110,15 +108,17 @@ ul li:hover a {
 }
 /*------------Movies cat --in--section-----------*/
 .section{
-    width: 55%;
+  
+    width: 50%;
     height: auto;
     margin: 0 auto;
     position: relative;
-    margin-top: 5px;
-    /* overflow:scroll; */
+    margin-top: 10px;
+    
+    
 }
 .section h2{
-    color: brown;
+    color: white;
     letter-spacing: 2px;
 }
 .nav{
@@ -126,17 +126,20 @@ ul li:hover a {
     height: 250px;
     overflow: hidden;
     padding: none;
-    overflow:scroll;
+    overflow:hidden;
+    /* border-radius: 15px; */
     
 }
 .nav .nav-bar{
+  display: flex;
     width: 100%;
     height: 100%;
     display: flex;
-    background-color: brown;
+    background-color: rgb(5, 3, 3);
 }
 
 .nav .column{
+    margin: 3px 5px 3px 10px;
     min-width: 19%;
     height: 100%;
     transition: 0.3s linear;
@@ -146,7 +149,6 @@ ul li:hover a {
 .column img{
     width: 150px;
     height: 100%;
-    display: block;
     object-fit: cover;
     cursor: pointer;
     
@@ -161,9 +163,8 @@ ul li:hover a {
 }
 #leftarrow, #rightarrow{
   position: absolute;
-  top: 40%;
-  font-size: 6.5em;
-  padding: 0 px 0 px;
+  top: 60%;
+  margin: -30px;
   transform: translateY(-50%);
   cursor: pointer;
 }
@@ -171,7 +172,7 @@ ul li:hover a {
 #leftarrow button, #rightarrow button{
   font-weight: bold;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 30px;
 }
 #rightarrow{
   right: 0;
