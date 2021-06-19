@@ -1,4 +1,8 @@
-const MOVIE_BASE_URL = 'http://localhost:8000/api/v1/titles/';
+const url_best_movie = 'http://localhost:8000/api/v1/titles/?sort_by=-imdb_score'
+const url_top_rad = 'http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page='
+const url_sci_fi = 'http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=Sci-Fi&page='
+const url_comedy = 'http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=Comedy&page='
+const url_action = 'http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=Action&page='
 
 
 function getFetch(url) {
@@ -7,411 +11,98 @@ function getFetch(url) {
 	.catch(err => console.log("Problem with fetch:" + err));
 }
 
-function get_rad_movies_url_1(){
-    let data = getFetch('http://localhost:8000/api/v1/titles/?sort_by=-imdb_score')
-    data.then(value => {
-      get_best_movie_info(value.results[0].url);
-      get_rad_movie1_info(value.results[1].url);
-      get_rad_movie2_info(value.results[2].url);
-      get_rad_movie3_info(value.results[3].url);
-      get_rad_movie4_info(value.results[4].url);
-    }) 
-}
-
-function get_rad_movies_url_2(){
-  let data = getFetch('http://localhost:8000/api/v1/titles/?page=2&sort_by=-imdb_score')
+// ********************  BEST MOVIE SECTION  ********************
+function get_best_movie_url(url){
+  let data = getFetch(url)
   data.then(value => {
-    get_rad_movie5_info(value.results[0].url);
-    get_rad_movie6_info(value.results[1].url);
-    get_rad_movie7_info(value.results[2].url);
+   get_best_movie_info(value.results[0].url);    
     
-  }) 
+  });
 }
 
-
-// const urlPage1Top = 'http://localhost:8000/api/v1/titles/?sort_by=-imdb_score'
-// const urlPage2Top = 'http://localhost:8000/api/v1/titles/?page=2&sort_by=-imdb_score'
-
-// function getCategoryMoviesUrl(url1,url2){
-//   const success = res => res.ok ? res.json() : Promise.resolve({});
-
-//   const firstPage = fetch(url1)
-//   .then(success);
-
-//   const secondPage = fetch(url2)
-//   .then(success);
-
-//   return Promise.all([firstPage, secondPage])
-//   .then(([firstPageData, secondPageData]) => {
-  
-//   firstPageData.results.forEach(function (movie, i){
-//     console.log(movie.url)
-//   })
-
-//   secondPageData.results.forEach(function (movie, i){
-//     console.log(movie.url)
-     
-//   })
-     
-
-//   })
-//   .catch(err => console.error(err));
-// }
-// getCategoryMoviesUrl(urlPage1Top,urlPage2Top);
-// console.log(movie);
-
-// function get_best_movie(url, category, index){
-//   const bestMovie = getCategoryMoviesUrl(urlPage1Top,urlPage2Top);
-//   console.log(bestMovie.then(movie, index));
-
-// }
-// get_best_movie();
-
-// function get_best_movie_info(url){
-//     getFetch(url)
-   
-    
-//     .then((movie) => {
-//       console.log(bestMovie);
-//     document.querySelector('.best_movie_description').innerHTML = `${movie.description}`;
-//     document.querySelector('.best_movie_poster').innerHTML = `<img src=${movie.image_url}></img>`;
-//     document.querySelector('.best_movie_title').innerHTML = `${movie.title}`;
-//     document.querySelector('.best_movie_poster').addEventListener("click", function() {
-//       get_modal_movie_info(movie);
-//      });
-//     })
-// }
-// get_best_movie_info();
-
-
-function get_scfi_movies_url_1(){
-  let data = getFetch('http://localhost:8000/api/v1/titles/?genre=Sci-Fi&sort_by=-imdb_score')
-  data.then(value => {
-    get_scfi_movie0_info(value.results[0].url);
-    get_scfi_movie1_info(value.results[1].url);
-    get_scfi_movie2_info(value.results[2].url);
-    get_scfi_movie3_info(value.results[3].url);
-    get_scfi_movie4_info(value.results[4].url);
-    
-  }) 
-}
-
-function get_scfi_movies_url_2(){
-  let data = getFetch('http://localhost:8000/api/v1/titles/?genre=Sci-Fi&page=2&sort_by=-imdb_score')
-  data.then(value => {
-    get_scfi_movie5_info(value.results[0].url);
-    get_scfi_movie6_info(value.results[1].url);
-     
-  }) 
-}
-
-function get_comedy_movies_url_1(){
-  let data = getFetch('http://localhost:8000/api/v1/titles/?genre=Comedy&page=1&sort_by=-imdb_score')
-  data.then(value => {
-    get_comedy_movie0_info(value.results[0].url);
-    get_comedy_movie1_info(value.results[1].url);
-    get_comedy_movie2_info(value.results[2].url);
-    get_comedy_movie3_info(value.results[3].url);
-    get_comedy_movie4_info(value.results[4].url);
-    
-  }) 
-}
-
-
-
-
-
-
-function get_comedy_movies_url_2(){
-  let data = getFetch('http://localhost:8000/api/v1/titles/?genre=Comedy&page=2&sort_by=-imdb_score')
-  data.then(value => {
-    get_comedy_movie5_info(value.results[0].url);
-    get_comedy_movie6_info(value.results[1].url);
-    
-    
-  }) 
-}
-// Best movie info
 function get_best_movie_info(url){
-    getFetch(url)
-    .then((movie) => {
-    document.querySelector('.best_movie_description').innerHTML = `${movie.description}`;
-    document.querySelector('.best_movie_poster').innerHTML = `<img src=${movie.image_url}></img>`;
-    document.querySelector('.best_movie_title').innerHTML = `${movie.title}`;
-    document.querySelector('.best_movie_poster').addEventListener("click", function() {
-      get_modal_movie_info(movie);
-     });
-    })
-}
-//############################  Top rad movies infos  #####################################
-function get_rad_movie1_info(url){
-  getFetch(url)
+  let data = getFetch(url)
   .then((movie) => {
-  document.getElementById('rad_movie_poster1').innerHTML = `<img src=${movie.image_url}></img>`;
-  document.querySelector('#rad_movie_poster1').addEventListener("click", function() {
+  document.querySelector('.best_movie_description').innerHTML = `${movie.description}`;
+  document.querySelector('.best_movie_poster').innerHTML = `<img src=${movie.image_url}></img>`;
+  document.querySelector('.best_movie_title').innerHTML = `${movie.title}`;
+  document.querySelector('.buttons').addEventListener("click", function() {
     get_modal_movie_info(movie);
    });
-  })   
+  })
 }
 
-function get_rad_movie2_info(url){
-  getFetch(url)
-  .then((movie) => {
-  document.getElementById('rad_movie_poster2').innerHTML = `<img src=${movie.image_url}></img>`;
-  document.querySelector('#rad_movie_poster2').addEventListener("click", function() {
-    get_modal_movie_info(movie);
-   });
-  })   
-}
-
-
-function get_rad_movie3_info(url){
-  getFetch(url)
-  .then((movie) => {
-    document.getElementById('rad_movie_poster3').innerHTML = `<img src=${movie.image_url}></img>`;
-  document.querySelector('#rad_movie_poster3').addEventListener("click", function() {
-    get_modal_movie_info(movie);
-   });
-  })   
-}
-
-function get_rad_movie4_info(url){
-  getFetch(url)
-  .then((movie) => {
-    document.getElementById('rad_movie_poster4').innerHTML = `<img src=${movie.image_url}></img>`;
-  document.querySelector('#rad_movie_poster4').addEventListener("click", function() {
-    get_modal_movie_info(movie);
-   });
-  })   
-}
-
-function get_rad_movie5_info(url){
-  getFetch(url)
-  .then((movie) => {
-  document.getElementById('rad_movie_poster5').innerHTML = `<img src=${movie.image_url}></img>`;
-  document.getElementById('rad_movie_poster5').addEventListener("click", function() {
-    get_modal_movie_info(movie);
-   });
-  })   
-}
-
-function get_rad_movie6_info(url){
-  getFetch(url)
-  .then((movie) => {
-  document.getElementById('rad_movie_poster6').innerHTML = `<img src=${movie.image_url}></img>`;
-  document.getElementById('rad_movie_poster6').addEventListener("click", function() {
-    get_modal_movie_info(movie);
-   });
-  })   
-}
-
-function get_rad_movie7_info(url){
-  getFetch(url)
-  .then((movie) => {
-  document.getElementById('rad_movie_poster7').innerHTML = `<img src=${movie.image_url}></img>`;
-  document.querySelector('#rad_movie_poster7').addEventListener("click", function() {
-    get_modal_movie_info(movie);
-   });
-  })   
-}
-
-// //############################  get science fiction movies infos  ##################################### 
-
-function get_scfi_movie0_info(url){
-  getFetch(url)
-  .then((movie) => {
-  document.getElementById('sce_fict_movie_poster1').innerHTML = `<img src=${movie.image_url}></img>`;
-  document.getElementById('sce_fict_movie_poster1').addEventListener("click", function() {
-    get_modal_movie_info(movie);
-   });
-  })   
-}
-function get_scfi_movie1_info(url){
-  getFetch(url)
-  .then((movie) => {
-  document.getElementById('sce_fict_movie_poster2').innerHTML = `<img src=${movie.image_url}></img>`;
-  document.getElementById('sce_fict_movie_poster2').addEventListener("click", function() {
-    get_modal_movie_info(movie);
-   });
-  })   
-}
-function get_scfi_movie2_info(url){
-  getFetch(url)
-  .then((movie) => {
-  document.getElementById('sce_fict_movie_poster3').innerHTML = `<img src=${movie.image_url}></img>`;
-  document.getElementById('sce_fict_movie_poster3').addEventListener("click", function() {
-    get_modal_movie_info(movie);
-   });
-  })   
-}
-function get_scfi_movie3_info(url){
-  getFetch(url)
-  .then((movie) => {
-  document.getElementById('sce_fict_movie_poster4').innerHTML = `<img src=${movie.image_url}></img>`;
-  document.getElementById('sce_fict_movie_poster4').addEventListener("click", function() {
-    get_modal_movie_info(movie);
-   });
-  })   
-}
-function get_scfi_movie4_info(url){
-  getFetch(url)
-  .then((movie) => {
-  document.getElementById('sce_fict_movie_poster5').innerHTML = `<img src=${movie.image_url}></img>`;
-  document.getElementById('sce_fict_movie_poster5').addEventListener("click", function() {
-    get_modal_movie_info(movie);
-   });
-  })   
-}
-function get_scfi_movie5_info(url){
-  getFetch(url)
-  .then((movie) => {
-  document.getElementById('sce_fict_movie_poster6').innerHTML = `<img src=${movie.image_url}></img>`;
-  document.getElementById('sce_fict_movie_poster6').addEventListener("click", function() {
-    get_modal_movie_info(movie);
-   });
-  })   
-}
-function get_scfi_movie6_info(url){
-  getFetch(url)
-  .then((movie) => {
-  document.getElementById('sce_fict_movie_poster7').innerHTML = `<img src=${movie.image_url}></img>`;
-  document.getElementById('sce_fict_movie_poster7').addEventListener("click", function() {
-    get_modal_movie_info(movie);
-   });
-  })   
-}
-
-// //############################  get comedy movies infos  ##################################### 
-
-
-function get_comedy_movie0_info(url){
-  getFetch(url)
-  .then((movie) => {
-  document.getElementById('comedy_movie_poster1').innerHTML = `<img src=${movie.image_url}></img>`;
-  document.getElementById('comedy_movie_poster1').addEventListener("click", function() {
-    get_modal_movie_info(movie);
-   });
-  })   
-}
-function get_comedy_movie1_info(url){
-  getFetch(url)
-  .then((movie) => {
-  document.getElementById('comedy_movie_poster2').innerHTML = `<img src=${movie.image_url}></img>`;
-  document.getElementById('comedy_movie_poster2').addEventListener("click", function() {
-    get_modal_movie_info(movie);
-   });
-  })   
-}
-function get_comedy_movie2_info(url){
-  getFetch(url)
-  .then((movie) => {
-  document.getElementById('comedy_movie_poster3').innerHTML = `<img src=${movie.image_url}></img>`;
-  document.getElementById('comedy_movie_poster3').addEventListener("click", function() {
-    get_modal_movie_info(movie);
-   });
-  })   
-}
-function get_comedy_movie3_info(url){
-  getFetch(url)
-  .then((movie) => {
-  document.getElementById('comedy_movie_poster4').innerHTML = `<img src=${movie.image_url}></img>`;
-  document.getElementById('comedy_movie_poster4').addEventListener("click", function() {
-    get_modal_movie_info(movie);
-   });
-  })   
-}
-function get_comedy_movie4_info(url){
-  getFetch(url)
-  .then((movie) => {
-  document.getElementById('comedy_movie_poster5').innerHTML = `<img src=${movie.image_url}></img>`;
-  document.getElementById('comedy_movie_poster5').addEventListener("click", function() {
-    get_modal_movie_info(movie);
-   });
-  })   
-}
-function get_comedy_movie5_info(url){
-  getFetch(url)
-  .then((movie) => {
-  document.getElementById('comedy_movie_poster6').innerHTML = `<img src=${movie.image_url}></img>`;
-  document.getElementById('comedy_movie_poster6').addEventListener("click", function() {
-    get_modal_movie_info(movie);
-   });
-  })   
-}
-function get_comedy_movie6_info(url){
-  getFetch(url)
-  .then((movie) => {
-  document.getElementById('comedy_movie_poster7').innerHTML = `<img src=${movie.image_url}></img>`;
-  document.getElementById('comedy_movie_poster7').addEventListener("click", function() {
-    get_modal_movie_info(movie);
-   });
-  })   
-}
-
-
-
-function get_action_info(){
-    getFetch('http://localhost:8000/api/v1/titles/?genre=Action&sort_by=-imdb_score')
-    .then((data) => {
-    const movies = data.results;
-    document.getElementById('action_movie_poster1').innerHTML = `<img src=${movies[0].image_url}></img>`;
-    document.getElementById('action_movie_poster2').innerHTML = `<img src=${movies[1].image_url}></img>`;
-    document.getElementById('action_movie_poster3').innerHTML = `<img src=${movies[2].image_url}></img>`;
-    document.getElementById('action_movie_poster4').innerHTML = `<img src=${movies[3].image_url}></img>`;
-    document.getElementById('action_movie_poster5').innerHTML = `<img src=${movies[4].image_url}></img>`;
+// ********************  TOP RATED MOVIES SECTION  ********************
+function get_rated_movie_url(url,idElement,page){
+  let data = getFetch(url+page)
+  data.then(value => {
     
-    document.getElementById('action_movie_poster1').addEventListener("click", function() {
-      get_modal_movie_info(movies[0]);
-    });
-    document.getElementById('action_movie_poster2').addEventListener("click", function() {
-      get_modal_movie_info(movies[1]);
-    });
-    document.getElementById('action_movie_poster3').addEventListener("click", function() {
-      get_modal_movie_info(movies[2]);
-    });
-    document.getElementById('action_movie_poster4').addEventListener("click", function() {
-      get_modal_movie_info(movies[3]);
-    });
-    document.getElementById('action_movie_poster5').addEventListener("click", function() {
-      get_modal_movie_info(movies[4]);
-    });
-})
-}
-function get_action_info2(){
-    getFetch('http://localhost:8000/api/v1/titles/?genre=Action&page=2&sort_by=-imdb_score')
-    .then((data) => {
-    const movies = data.results;
-    document.getElementById('action_movie_poster6').innerHTML = `<img src=${movies[0].image_url}></img>`;
-    document.getElementById('action_movie_poster7').innerHTML = `<img src=${movies[1].image_url}></img>`;
+    value.results.forEach((item, index) => {
+      console.log(item.url); 
+      console.log(index);
+      if(page == 1 && index > 0){
+        get_movie_info(item.url,idElement+ (index));
+      }
+      else{
+        if (page == 2){
+          if (index < 3) {
+          get_movie_info(item.url,idElement+ (index+5));
+        }
+        }
+ 
+      }
 
-    document.getElementById('action_movie_poster6').addEventListener("click", function() {
-      get_modal_movie_info(movies[0]);
-    });
-    document.getElementById('action_movie_poster7').addEventListener("click", function() {
-      get_modal_movie_info(movies[1]);
-    });
-})
+    })
+    
+  }) 
 }
 
-// Top rate movies informations
-get_rad_movies_url_1();
-get_rad_movies_url_2();
+// ********************  SCE-FI, COMEDY AND ACTION  MOVIES SECTION  ********************
 
-// Top rate movies informations
-get_scfi_movies_url_1();
-get_scfi_movies_url_2();
+function get_movie_url(url,idElement,page){
+  let data = getFetch(url+page)
+  data.then(value => {
+    
+    value.results.forEach((item, index) => {
+     
+      if(page == 1){
+        get_movie_info(item.url,idElement+ (index+1));
+      }
+      else{
+        if (index < 2) {
+          get_movie_info(item.url,idElement+ (index+1+5));
+        }
+      }
+    
+    })
+    
+  }) 
+}
 
-// Top rate movies informations
-get_comedy_movies_url_1();
-get_comedy_movies_url_2();
 
-// Top rate movies informations
-get_action_info();
-get_action_info2();
+function get_movie_info(url,idElement){
+  getFetch(url)
+  .then((movie) => {
+  document.getElementById(idElement).innerHTML = `<img src=${movie.image_url}></img>`;
+  document.getElementById(idElement).addEventListener("click", function() {
+    get_modal_movie_info(movie);
+   });
+  })   
+}
+
+get_best_movie_url(url_best_movie);
+get_rated_movie_url(url_top_rad,"rad_movie_poster",1);
+get_rated_movie_url(url_top_rad,"rad_movie_poster",2);
+get_movie_url(url_sci_fi,"sce_fict_movie_poster",1);
+get_movie_url(url_sci_fi,"sce_fict_movie_poster",2);
+get_movie_url(url_comedy,"comedy_movie_poster",1);
+get_movie_url(url_comedy,"comedy_movie_poster",2);
+get_movie_url(url_action,"action_movie_poster",1);
+get_movie_url(url_action,"action_movie_poster",2);
 
 
-// ################################################   JS Modal section  ######################################################################
 
+// ********************  MODAL SECTION  ********************
 // Get DOM Elements
 const modal = document.querySelector('#my_modal');
 
