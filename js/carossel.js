@@ -1,52 +1,66 @@
-let left = 1;
-let right = 5;
+var sliders = document.querySelectorAll(".slider-wrapper");
 
-function show(){
-    
-    
-    for(i=left; i<=right; i++){
-        document.getElementById("rad_movie_poster"+ i).style.display="inline-block";
-        
-    }
-    for(i=left; i<=right; i++){
-        document.getElementById("sce_fict_movie_poster"+ i).style.display="inline-block";
-        
-    }
-    for(i=left; i<=right; i++){
-        document.getElementById("comedy_movie_poster"+ i).style.display="inline-block";
-        
-    }
-    for(i=left; i<=right; i++){
-        document.getElementById("action_movie_poster"+ i).style.display="inline-block";
-    }
+window.addEventListener("resize", () => {
+  for (let i = 0; i < sliders.length; i++) {
+    setWrapperWidth(sliders[i]);
+  }
+});
+
+for (let i = 0; i < sliders.length; i++) {
+  let slider = sliders[i].querySelector(".slider");
+  let wrapper = slider.querySelector(".wrapper");
+
+  setWrapperWidth(sliders[i]);
+
+  // prev/next event listeners
+  let navR = sliders[i].querySelector("nav .right");
+  let navL = sliders[i].querySelector("nav .left");
+
+  slider.addEventListener("scroll", () => {
+    if (slider.scrollLeft === 0) navL.classList.add("disabled");
+    else navL.classList.remove("disabled");
+
+    if (slider.scrollLeft >= wrapper.clientWidth - slider.clientWidth)
+      navR.classList.add("disabled");
+    else navR.classList.remove("disabled");
+  });
+
+  if (navR)
+    navR.addEventListener("click", (e) => {
+      navL.classList.remove("disabled");
+      transition(slider, 0, slider.clientWidth, "right", () => {
+        if (slider.scrollLeft >= wrapper.clientWidth - slider.clientWidth) {
+          navR.classList.add("disabled");
+        }
+      });
+    });
+
+  if (navL)
+    navL.addEventListener("click", (e) => {
+      navR.classList.remove("disabled");
+      transition(slider, 0, slider.clientWidth, "left", () => {
+        if (slider.scrollLeft == 0) navL.classList.add("disabled");
+      });
+    });
 }
 
-function moveRight(id_element){
-    if(left<3 && right <=6){
-        document.getElementById(id_element + left).style.display="none";
-        left+=1;
-        right+=1;
-
-        for(i=left; i<=right; i++){
-            document.getElementById(id_element + i).style.display="inline-block";
-        }
+function transition(el, from, to, dir, cb) {
+  let inc = from;
+  let spd = 5;
+  let interval = setInterval(() => {
+    if (inc >= to) {
+      clearInterval(interval);
+      spd = to - inc;
+      cb(); // callback
     }
-    else
-        return;
-    
+    el.scrollLeft = dir === "right" ? el.scrollLeft + spd : el.scrollLeft - spd;
+    inc += spd;
+  }, 4);
 }
 
-function moveLeft(id_element){
-    if(left>=1 && right >=6){
-        document.getElementById(id_element + right).style.display="none";
-        left-=1;
-        right-=1;
-
-        for(i=left; i<=right; i++){
-            document.getElementById(id_element + i).style.display="inline-block";
-        }
-    }
-    else
-        return;
-    
+function setWrapperWidth(sliderWrapper) {
+  let slider = sliderWrapper.querySelector(".slider");
+  let wrapper = slider.querySelector(".wrapper");
+  let slides = wrapper.querySelectorAll(".slide");
+  wrapper.style.width = slides.length * slides[0].clientWidth + "px";
 }

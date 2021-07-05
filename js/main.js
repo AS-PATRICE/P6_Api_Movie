@@ -38,8 +38,8 @@ function get_rated_movie_url(url,idElement,page){
   data.then(value => {
     
     value.results.forEach((item, index) => {
-      console.log(item.url); 
-      console.log(index);
+      // console.log(item.url); 
+      // console.log(index);
       if(page == 1 && index > 0){
         get_movie_info(item.url,idElement+ (index));
       }
@@ -146,4 +146,3 @@ function get_modal_movie_info(movie){
   
   openModal();
 }
-

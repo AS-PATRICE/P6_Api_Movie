@@ -2,11 +2,9 @@
   font-family: 'Bebas Neue', cursive;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 body{
-  min-height: 100vh;
-  background:black;
+  background : #000;
 }
 /*------------Header-----------*/
 header, footer{
@@ -20,6 +18,9 @@ header, footer{
   position: relative;
   border-radius: 15px;
   margin: 5px auto;
+}
+footer h3{
+  color: #fff;
 }
 .logo{
   font-size: 2.5em;
@@ -109,74 +110,75 @@ ul li:hover a {
   background-color: brown;
 }
 /*------------Movies cat --in--section-----------*/
-.section{
-  
-    width: 50%;
-    height: auto;
-    margin: 0 auto;
-    position: relative;
-    margin-top: 10px;
-    
-    
+.contain{
+  max-width: 70%;
+  margin: 0 auto;
 }
-.section h2{
-    color: white;
-    letter-spacing: 2px;
+.contain h1{
+  color: #fff;
+  letter-spacing: 2px;
+  margin: 10px 20px;
 }
-.nav{
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-    overflow:hidden;
-    
+/*--sliders--*/
+.slider-wrapper {
+  position: relative;
 }
-.nav .nav-bar{
-  display: flex;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    background-color: rgb(5, 3, 3);
-}
-
-.nav .column{
-    margin: 3px 5px 3px 10px;
-    min-width: 19%;
-    height: 100%;
-    transition: 0.3s linear;
-    
-}
-
-.column img{
-    width: 150px;
-    height: 100%;
-    object-fit: cover;
-    cursor: pointer;
-    
-}
-
-.column img:hover{
-  width: 150px;
-  height: 100%;
-  transform: scale(1.2);
-  cursor: pointer;
-  
-}
-.leftarrow, .rightarrow{
+.slider-wrapper nav {
   position: absolute;
-  top: 60%;
-  margin: -30px;
-  transform: translateY(-50%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  pointer-events: none;
+}
+.slider-wrapper nav div {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  color: black;
+  font-size: 41px;
+  box-shadow: 0 0 6px 1px rgba(0,0,0, .3);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -65px;
   cursor: pointer;
+  transition: background-color 0.1s ease-out;
+  pointer-events: all;
+}
+.slider-wrapper nav div:hover {
+  background-color: #444;
+}
+.slider-wrapper nav div:hover {
+  background-color: #444;
+}
+.slider-wrapper nav div.disable{
+  opacity: 0;
+  pointer-events: none;
+} 
+.slider {
+  width: 100%;
+  overflow-x:hidden;
+}
+.slider .wrapper {
+  flex-wrap: wrap;
+  display: flex;
+  width: 100%;
+  height: 150%;
+  display: flex;
+  overflow: hidden;
+}
+.slider  .slide {
+  width: 330px; /* a default width */
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
-.leftarrow button, .rightarrow button{
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 30px;
-}
-.rightarrow{
-  right: 0;
-}
 
 /*------------Modal--section-----------*/
 .modal {
@@ -248,7 +250,6 @@ ul li:hover a {
       opacity: 6;
     }
   }
-/*------------section --End-----------*/
 /*------------responsive web site-----------*/
 @media (max-width: 1100px){
     .logo{
