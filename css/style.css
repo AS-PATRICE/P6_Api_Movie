@@ -111,13 +111,15 @@ ul li:hover a {
 }
 /*------------Movies cat --in--section-----------*/
 .contain{
-  max-width: 70%;
+  max-width: 60%;
   margin: 0 auto;
+  margin-top: 10px;
+  padding: 20px 30px;
 }
 .contain h1{
   color: #fff;
   letter-spacing: 2px;
-  margin: 10px 20px;
+  padding: 10px 20px;
 }
 /*--sliders--*/
 .slider-wrapper {
@@ -127,13 +129,13 @@ ul li:hover a {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 85%;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10px;
   pointer-events: none;
+  margin: 20px 20px;
 }
 .slider-wrapper nav div {
   width: 40px;
@@ -146,7 +148,7 @@ ul li:hover a {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: -65px;
+  margin: -60px;
   cursor: pointer;
   transition: background-color 0.1s ease-out;
   pointer-events: all;
@@ -278,21 +280,4 @@ ul li:hover a {
         padding: 20px 50px;
     }
     
-}
-
-#chk1{
-    display: none;
-}
-@media (max-width: 760px){
-  .row .nav{
-      height: auto;
-      flex-wrap: wrap;
-      transition: 0.5s linear;
-  }
-  .column{
-      width: 25%;
-  }
-  .prev, .next{
-      display: flex;
-  }
 }
